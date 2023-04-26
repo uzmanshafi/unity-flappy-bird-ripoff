@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class pipe_spawner : MonoBehaviour
 {
     public GameObject pipe;
-    public float spawn_time = 1;
+    public float spawnRate = 1.25f;
     private float timer = 0;
 
-    public float heightOffset;
+    public float heightOffset = 0.86f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,14 +19,14 @@ public class pipe_spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < spawn_time)
+        if (timer < spawnRate)
         {
             timer = timer + Time.deltaTime;
         } 
         else
         {
-            timer = 0;
             spawnpipes();
+            timer = 0;
         }
         
         
@@ -33,10 +34,11 @@ public class pipe_spawner : MonoBehaviour
 
     void spawnpipes()
     {
-        float lowestpoint = transform.position.y - heightOffset;
-        float highestpoint = transform.position.y + heightOffset;
+        float lowestPoint = transform.position.y - heightOffset;
+        float highestPoint = transform.position.y + heightOffset;
 
-        Instantiate(pipe, new Vector3(transform.position.x, Random.Range(lowestpoint, heightOffset), 0), transform.rotation);
+        Instantiate(pipe, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
     }
+
 
 }
