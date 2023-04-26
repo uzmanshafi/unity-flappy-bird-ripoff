@@ -21,6 +21,12 @@ public class bird_script : MonoBehaviour
         {
             myRigidbody.velocity = Vector2.up * flapForce;
         }
+
+        if (transform.position.y > 3 || transform.position.y < -2)
+        {
+            logic.GameOver();
+            isDead = false;
+        }
         
     }
 
