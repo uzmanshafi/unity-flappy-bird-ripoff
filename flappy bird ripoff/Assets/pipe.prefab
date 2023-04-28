@@ -82,6 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8436999076623478854}
   - component: {fileID: 8436999076623478855}
+  - component: {fileID: -3989332399287589069}
   m_Layer: 0
   m_Name: pipe
   m_TagString: Untagged
@@ -123,6 +124,23 @@ MonoBehaviour:
   speed_increase_amount: 0.1
   speed_increase_interval: 10
   deadzone: -5
+  gameIsOver: 0
+--- !u!114 &-3989332399287589069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8436999076623478904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d2269659756e24982bbc79aea2a187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pipe: {fileID: 0}
+  spawnRate: 1.25
+  heightOffset: 0.86
+  gameIsOver: 0
 --- !u!1 &8436999077302322690
 GameObject:
   m_ObjectHideFlags: 0

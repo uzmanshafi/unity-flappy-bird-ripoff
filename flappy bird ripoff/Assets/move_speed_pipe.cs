@@ -12,6 +12,8 @@ public class move_speed_pipe : MonoBehaviour
 
     public float deadzone = -4;
 
+    public bool gameIsOver = false;
+
     void Start()
     {
         current_speed = base_move_speed;
@@ -33,11 +35,20 @@ public class move_speed_pipe : MonoBehaviour
         // Move the pipe and check if it's offscreen
         if (transform.position.x < deadzone)
         {
+            Debug.Log("Pipe is offscreen and Destoryed");
             Destroy(gameObject);
         }
         else
         {
-            transform.position += (Vector3.left * current_speed) * Time.deltaTime;
+            if(!gameIsOver)
+            {
+                transform.position += (Vector3.left * current_speed) * Time.deltaTime;
+            }
         }
+    }
+
+    public void GameOver()
+    {
+        gameIsOver = true;
     }
 }

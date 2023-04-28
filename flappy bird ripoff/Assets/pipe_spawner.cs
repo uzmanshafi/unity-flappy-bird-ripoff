@@ -10,6 +10,8 @@ public class pipe_spawner : MonoBehaviour
     private float timer = 0;
 
     public float heightOffset = 0.86f;
+
+    public bool gameIsOver = false;
     // Start is called before the first frame update
     void Start()
     {
