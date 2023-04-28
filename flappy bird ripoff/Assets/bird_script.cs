@@ -24,15 +24,15 @@ public class bird_script : MonoBehaviour
 
         if (transform.position.y > 3 || transform.position.y < -2)
         {
-            logic.GameOver();
             isDead = false;
+            logic.GameOver();
         }
         
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-            logic.GameOver();
-            isDead = false;
+        isDead = false;
+        logic.GameOver();
     }
 }
